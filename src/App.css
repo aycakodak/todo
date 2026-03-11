@@ -1,34 +1,120 @@
-
-.App{
+/* Genel Ayarlar */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5; /* Hafif grimsi arka plan */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.App {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
-.main{
-    width: 500px;
+
+.Main {
+    background-color: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Modern yumuşak gölge */
+}
+
+.app-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* ToDoCreate Bölümü */
+.todo-create {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
-.todo-create{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.todo-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
 }
+
+.todo-input:focus {
+    border-color: #6c63ff; /* Modern mor tonu */
+}
+
+.todo-create button {
+    padding: 10px 20px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.todo-create button:hover {
+    background-color: #554edb;
+}
+
+/* ToDo Satırları */
 .todo-row {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid #f1f1f1;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
-.todo-icons{
-    font-size: 20px;
-    margin: 5px;
 
+.todo-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* İkonlar */
+.todo-icons {
+    display: flex;
+    gap: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    align-items: center;
+}
+
+/* Silme İkonu (Kırmızımsı) */
+.todo-icons svg:first-child {
+    color: #ff6b6b;
+}
+
+/* Düzenleme/Onay İkonu (Mavimsi/Yeşilimsi) */
+.todo-icons svg:last-child {
+    color: #4dabf7;
+}
+
+.todo-icons svg:hover {
+    opacity: 0.7;
+}
+
+/* Input Düzenleme Modu */
+.todo-row input.todo-input {
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 250px;
 }
